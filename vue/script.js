@@ -40,19 +40,25 @@ var app = new Vue({
     },
     methods: {
 
+
         cerca(){
-            // fai una chiamata
-            axios // RIGA SOTTO - e sostituisci this.tipo / this.api / this.ricerca al valore che vedi nei data
+            console.log(this.ricerca);
+
+
+            axios
             .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
             .then(result => {
-                
-                // restituisci l'intero array
+    
                 this.arrayRisultato = result.data.results;
-                // console.log(this.arrayRisultato); // vedi se non esplode qualcosa
+                console.log(this.arrayRisultato);
             })
         }
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 036e865... Problema - vedo solo 20 oggetti
     }
 });
