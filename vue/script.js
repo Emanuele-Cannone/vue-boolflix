@@ -51,15 +51,7 @@ var app = new Vue({
                 // console.log(this.arrayRisultato); // vedi se non esplode qualcosa
             })
         }
-
-<<<<<<< HEAD
-
-
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of 036e865... Problema - vedo solo 20 oggetti
-=======
->>>>>>> main
     }
+
+
 });
