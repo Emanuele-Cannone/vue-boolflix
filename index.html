@@ -12,8 +12,8 @@
 <body>
     <div id="contenitore">
 
-        <input type="text" @keydown.enter="cerca" v-model="ricerca">
-        <button>Cerca</button>
+        <input type="text" v-model="ricerca">
+        <button @click="cerca">Cerca</button>
 
 
 

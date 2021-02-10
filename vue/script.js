@@ -26,7 +26,7 @@ var app = new Vue({
         cerca(){
 
             axios
-            .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.riceca)
+            .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
             .then(result => {
     
                 this.arrayRisultato = result.data.results;
