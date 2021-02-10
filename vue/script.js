@@ -9,7 +9,24 @@
 // 3. Lingua
 // 4. Voto
 
-
+// campione di risposta:
+    // data.results:
+        // {
+        //     "adult": false,
+        //     "backdrop_path": null,
+        //     "genre_ids": [],
+        //     "id": 391889,
+        //     "original_language": "en",
+        //     "original_title": "Bella ciao",
+        //     "overview": "A documentary film about the violent riots during the 2001 G8 meeting in Genoa.",
+        //     "popularity": 9.09,
+        //     "poster_path": null,
+        //     "release_date": "2002-04-08",
+        //     "title": "Bella ciao",
+        //     "video": false,
+        //     "vote_average": 5.5,
+        //     "vote_count": 1
+        // }
 
 
 var app = new Vue({
@@ -24,14 +41,16 @@ var app = new Vue({
 
 
         cerca(){
+            console.log(this.ricerca);
+
 
             axios
             .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
             .then(result => {
     
                 this.arrayRisultato = result.data.results;
+                console.log(this.arrayRisultato);
             })
-            console.log(this.arrayRisultato);
         }
 
 
