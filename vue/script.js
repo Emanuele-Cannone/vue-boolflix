@@ -32,10 +32,11 @@
 var app = new Vue({
     el: '#contenitore',
     data:{
-        arrayRisultato: [],
         ricerca: '',
         api: '17afad9915b223d4e647b46ea79354ef',
-        tipo: 'movie'
+        tipo: 'movie',
+        arrayRisultato: [],
+        arrotondato: ''
     },
     methods: {
 
@@ -50,6 +51,8 @@ var app = new Vue({
                 // console.log(this.arrayRisultato); // vedi se non esplode qualcosa
             })
         }
+
+
 
     }
 });
