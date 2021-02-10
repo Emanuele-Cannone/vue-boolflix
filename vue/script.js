@@ -39,22 +39,17 @@ var app = new Vue({
     },
     methods: {
 
-
         cerca(){
-            console.log(this.ricerca);
-
-
-            axios
+            // fai una chiamata
+            axios // RIGA SOTTO - e sostituisci this.tipo / this.api / this.ricerca al valore che vedi nei data
             .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
             .then(result => {
-    
+                
+                // restituisci l'intero array
                 this.arrayRisultato = result.data.results;
-                console.log(this.arrayRisultato);
+                // console.log(this.arrayRisultato); // vedi se non esplode qualcosa
             })
         }
-
-
-
 
     }
 });
