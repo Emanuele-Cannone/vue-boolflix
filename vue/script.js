@@ -51,7 +51,8 @@ var app = new Vue({
         api: '17afad9915b223d4e647b46ea79354ef',
         tipo: 'all',
         arrayRisultato: [],
-        arrayAll: []
+        arrayAll: [],
+        
     },
     methods: {
 
