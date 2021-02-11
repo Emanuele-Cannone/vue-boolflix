@@ -19,7 +19,7 @@
         <button @click="cerca">Cerca</button>
         
 
-        <div class="film" class="risultato" v-for="(elemento, index) in arrayRisultato">
+        <div class="film" class="risultato" v-for="elemento in arrayRisultato">
 
             <p>titolo: {{elemento.title}}</p>
             <p>titolo originale: {{elemento.original_title}}</p>
@@ -28,12 +28,9 @@
                 <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
                 <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
             </p>
-            <p v-if = " elemento.original_language == 'en' "> bandiera inglese </p>
-            <p v-else-if = " elemento.original_language == 'it' "> bandiera italiana </p>
-            <p v-else-if = " elemento.original_language == 'es' "> bandiera spagnola </p>
-            <p v-else> nessuna bandiera </p>
-            
-            
+            <p class="bandiera_lingua">
+                <img :src="'img/' + elemento.original_language + '.png'"></img>
+            </p>
 
         </div>
 

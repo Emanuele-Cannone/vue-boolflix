@@ -1,5 +1,3 @@
-
-
 // Allarghiamo poi la ricerca anche alle serie tv.Con la stessa azione di ricerca
 // dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando
 // attenti ad avere alla fine dei valori simili(le serie e i film hanno campi nel JSON di
@@ -34,7 +32,10 @@ var app = new Vue({
         ricerca: '',
         api: '17afad9915b223d4e647b46ea79354ef',
         tipo: 'movie',
-        arrayRisultato: []
+        arrayRisultato: [],
+
+
+
     },
     methods: {
 
@@ -42,27 +43,48 @@ var app = new Vue({
             // fai una chiamata
             axios // RIGA SOTTO - e sostituisci this.tipo / this.api / this.ricerca al valore che vedi nei data
             .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
+
+
+
+            // DOPO NELLA CHIAMATA PRENDI TUTTE LE PAGINE  
+                // HAI IL VALORE PAGINE TOTALI ALLA FINE DELLA CHIAMATA
             .then(result => {
                 
                 // restituisci l'intero array
                 this.arrayRisultato = result.data.results;
 
-                // in questo modo vado a mappare per ogni l'elemento 
-                this.arrayRisultato = this.arrayRisultato.map(element =>{
 
-                    // l'elemento
-                    return{ ...element,
-
-                        // votazione = blablabla
-                        votazione: Math.round(element.vote_average / 2)
-
-                    }
-
-                })
-               
+                // QUESTA DEVE STARE FUORI DALLA CHIAMATA
+                this.votazioneDiversa();
             })
-            
+
+
+        },
+
+
+
+        // PERCHE' NON FUNZIONI?????????????????
+
+        votazioneDiversa(){
+
+            // grazie dave <3
+            console.log('ciao');
+            // in questo modo vado a mappare per ogni l'elemento 
+            this.arrayRisultato = this.arrayRisultato.map(element => {
+
+                // l'elemento
+                return {
+                    ...element,
+
+                    // votazione = numero arrotondato di numero / 2
+                    votazione: Math.round(element.vote_average / 2)
+
+                }
+
+            })
         }
+
+
 
 
     }
