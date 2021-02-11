@@ -9,3 +9,7 @@
 .film{
     margin-top: 20px;
 }
+
+.film span{
+    margin: 0;
+}
