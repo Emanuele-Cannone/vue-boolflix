@@ -41,9 +41,7 @@ var app = new Vue({
         ricerca: '',
         api: '17afad9915b223d4e647b46ea79354ef',
         tipo: 'movie',
-        arrayRisultato: [],
-        arrotondato: '',
-        arrayResto: []
+        arrayRisultato: []
     },
     methods: {
 
@@ -56,30 +54,29 @@ var app = new Vue({
                 // restituisci l'intero array
                 this.arrayRisultato = result.data.results;
 
-                // console.log(this.arrayRisultato); // vedi se non esplode qualcosa
 
-                // per ogni oggetto nell'array risultato
-                for (let index = 0; index < this.arrayRisultato.length; index++) {
-                    
-                    // prendi il numero della votazione, dividilo per 2 e arrotondalo per difetto
-                    this.arrayRisultato[index].vote_average = Math.floor(this.arrayRisultato[index].vote_average / 2);
+                // in questo modo vado a mappare per ogni l'elemento 
+                this.arrayRisultato = this.arrayRisultato.map(element =>{
 
-                    // console.log(this.arrayRisultato[index].vote_average);
 
-                    // dammi il resto di 5 per avere il numero di volte per cui devo stampare le stelle vuote
-                    this.resto = 5 - this.arrayRisultato[index].vote_average;
+                    // l'elemento
+                    return{ ...element,
 
-                    this.arrayResto.push(this.resto);
+                        // votazione = blablabla
+                        votazione: Math.round(element.vote_average / 2)
 
-                    // console.log(this.arrayResto[index].resto);
+                    }
 
-                    console.log(this.arrayRisultato[index].vote_average, 'il resto di 5 è ', this.arrayResto[index]);
+                })
+                console.log(this.arrayRisultato);
 
-                }
-
+               
             })
 
+
         }
+
+
     }
 
 

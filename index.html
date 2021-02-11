@@ -17,6 +17,7 @@
         <input type="text" v-model="ricerca">
         
         <button @click="cerca">Cerca</button>
+        <!-- <button @click="arrotondaNumero" >Arrotonda</button> -->
         
 
         <div class="film" class="risultato" v-for="(elemento, index) in arrayRisultato">
@@ -24,18 +25,12 @@
             <p>titolo: {{elemento.title}}</p>
             <p>titolo originale: {{elemento.original_title}}</p>
             <p>lingua: {{elemento.original_language}}</p>
-            <p>voto: 
-
-                <span v-for="stellapiena in elemento.vote_average ">
-                    <i class="fas fa-star"></i>
-                </span>
-                <span v-for="stellavuota in arrayResto[index]">
-                    <i class="far fa-star"></i>
-                </span>
-
-                
+            <p>Votazione: 
+                <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
+                <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
             </p>
             
+
         </div>
 
 
