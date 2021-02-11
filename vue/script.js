@@ -1,11 +1,3 @@
-// Trasformiamo il voto da 1 a 10 decimale in un numero intero da 1 a 5, così da
-// permetterci di stampare a schermo un numero di stelle piene che vanno da 1 a 5,
-// lasciando le restanti vuote(troviamo le icone in FontAwesome).
-
-
-// Trasformiamo poi la stringa statica della lingua in una vera e propria bandiera della
-// nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della
-// nazione ritornata dall’API(le flag non ci sono in FontAwesome).
 
 
 // Allarghiamo poi la ricerca anche alle serie tv.Con la stessa azione di ricerca
@@ -32,6 +24,7 @@
         //     "video": false,
         //     "vote_average": 5.5,
         //     "vote_count": 1
+        // aggiunto nel map "votazione" : 3
         // }
 
 
@@ -54,10 +47,8 @@ var app = new Vue({
                 // restituisci l'intero array
                 this.arrayRisultato = result.data.results;
 
-
                 // in questo modo vado a mappare per ogni l'elemento 
                 this.arrayRisultato = this.arrayRisultato.map(element =>{
-
 
                     // l'elemento
                     return{ ...element,
@@ -68,12 +59,9 @@ var app = new Vue({
                     }
 
                 })
-                console.log(this.arrayRisultato);
-
                
             })
-
-
+            
         }
 
 
