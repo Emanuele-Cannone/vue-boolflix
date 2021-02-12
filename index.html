@@ -27,48 +27,77 @@
             </div>
 
             <div class="header_right">
-                <input type="text" v-model="ricerca">
-                <button @click="cerca">Cerca</button>
+                <span @click="visualizzaInput" class="white"><i class="fas fa-search"></i></span>
+                <input v-if="barraRicerca" type="text" v-model="ricerca">
+                <button v-if="barraRicerca" @click="cerca">Cerca</button>
+                <span class="white"><i class="fas fa-gift"></i></span>
+                <span class="white"><i class="fas fa-bell"></i></span>
+                <span class="white"><img src="img/avatar_3.jpg" alt="immagine_profilo"></span>
+                <span class="white"><i class="fas fa-caret-down"></i></span>
             </div>
 
         </header>
 
+        <main>
+
+            <h2>originali boolflix</h2>
+
+            <div class="contenitore_film">
+
+                <div class="film" v-for="elemento in arrayRisultato">
+                    
+                    <div id="poster">
+                        <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-else><img src="img/poster-placeholder.png" alt=""></p>
+                    </div>
+                    <div id="descrizione" class="none">
+
+                        <p>titolo: {{elemento.title || elemento.original_name}}</p>
+                        <p>titolo originale: {{elemento.original_title}}</p>
+                        <p>lingua: {{elemento.original_language}}</p>
+                        <p>Votazione: 
+                            <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
+                            <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
+                        </p>
+                        <p class="bandiera_lingua">
+                            <img :src="'img/' + elemento.original_language + '.png'"></img>
+                        </p>
+                    </div>
+
         
+                </div>
+        
+                <div class="film" v-for="elemento in arrayAll">
+                    
+                    <div id="poster">
+
+                        <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-else><img src="img/poster-placeholder.png" alt=""></p>
+                    
+                    </div>
+                    
+                    <div id="descrizione" class="none">
+
+                        <p>titolo: {{elemento.title || elemento.name}}</p>
+                        <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>
+                        <p>lingua: {{elemento.original_language}}</p>
+                        <p>Votazione:
+                            <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
+                            <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
+                        </p>
+                        <p class="bandiera_lingua">
+                            <img :src="'img/' + elemento.original_language + '.png'"></img>
+                        </p>
+                    
+                    </div>
+                
+                </div>
+
+            </div>
+
+        </main>
         
 
-        <div class="film" v-for="elemento in arrayRisultato">
-
-            <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-            <p v-else><img src="img/poster-placeholder.png" alt=""></p>
-            <p>titolo: {{elemento.title || elemento.original_name}}</p>
-            <p>titolo originale: {{elemento.original_title}}</p>
-            <p>lingua: {{elemento.original_language}}</p>
-            <p>Votazione: 
-                <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
-                <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
-            </p>
-            <p class="bandiera_lingua">
-                <img :src="'img/' + elemento.original_language + '.png'"></img>
-            </p>
-
-        </div>
-
-        <div class="film" v-for="elemento in arrayAll">
-
-            <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-            <p v-else><img src="img/poster-placeholder.png" alt=""></p>
-            <p>titolo: {{elemento.title || elemento.name}}</p>
-            <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>
-            <p>lingua: {{elemento.original_language}}</p>
-            <p>Votazione:
-                <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
-                <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
-            </p>
-            <p class="bandiera_lingua">
-                <img :src="'img/' + elemento.original_language + '.png'"></img>
-            </p>
-        
-        </div>
 
     </div>
 

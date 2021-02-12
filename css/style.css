@@ -4,24 +4,38 @@
     box-sizing: border-box;
 }
 
-#contenitore{
-    background-color: black;
-    height: 500px;
+
+/* classi riutilizzabili */
+.white{
+    color: #fff;
 }
 
+
+
+/* vue */
+#contenitore{
+    background-color: black;
+    color: #fff
+}
+
+
+
+/* header */
 header{
     display: flex;
     align-items: center;
-    height: 80px;
+    height: 120px;
+    padding-bottom: 50px;
 }
 
 header .header_left img{
     height: 40px;
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .header_center{
     flex-grow: 1;
+    padding: 0 20px;
 }
 
 .header_center ul{
@@ -37,7 +51,7 @@ header .header_left img{
 }
 
 .header_center ul li:hover{
-    color: #fff;
+    color: rgb(139, 139, 139);
 }
 
 .header_center ul li.bianco{
@@ -45,11 +59,49 @@ header .header_left img{
 }
 
 .header_right{
-    padding: 0 10px;
+    padding: 0 20px;
+}
+
+.header_right span:not(:nth-child(4)){
+    padding-right: 10px;
+}
+
+.header_right img{
+    height: 25px;
+    vertical-align: middle;
+}
+
+
+
+/* main */
+main{
+    margin: 0 30px;
+}
+
+h2{
+    text-transform: capitalize;
+    color: #fff;
+    margin-bottom: 20px; 
+}
+
+.contenitore_film{
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: blue;
 }
 
 .film{
-    margin-top: 20px;
+    width: calc(100% / 6);
+    padding: 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.film img{
+    width: 270px;
 }
 
 .film span{
@@ -58,4 +110,8 @@ header .header_left img{
 
 .bandiera_lingua img{
     height: 30px;
+}
+
+.none{
+    display: none;
 }

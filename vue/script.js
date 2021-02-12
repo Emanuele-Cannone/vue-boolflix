@@ -22,7 +22,8 @@
                 scelta: 'Film',
                 nonSoComeCHiamarlo: false
             },
-        ]
+        ],
+        barraRicerca: false,
     },
     methods: {
 
@@ -153,6 +154,12 @@
             // cambia il valore del booleano da vero a falso e viceversa
             this.arrayScelta[index].nonSoComeCHiamarlo = !this.arrayScelta[index].nonSoComeCHiamarlo;
         
+        },
+
+        visualizzaInput(){
+
+            this.barraRicerca = !this.barraRicerca
+
         }
 
 
