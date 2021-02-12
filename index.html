@@ -13,17 +13,27 @@
 <body>
     <div id="contenitore">
 
-        
-        <input type="text" v-model="ricerca">
+        <header>
 
-        <select name="Seleziona il tipo di ricerca" v-model="tipo">
-            <option value="all">Tutti</option>
-            <option value="movie">Film</option>
-            <option value="tv">Serie Tv</option>
-        </select>
+            <div class="header_left">
+                <img src="img/willoflix_logo.png" alt="logo">
+            </div>
+
+            <div class="header_center">
+                <ul>
+                    <!-- RICORDA COME METTERE LA CLASSE DAL CSS CON VUE -->
+                    <li v-for="(element, index) in arrayScelta" @click="scelta(element.tipologia, index)" :class="(arrayScelta[index].nonSoComeCHiamarlo) ? 'bianco' : 'null' "> {{element.scelta}}</li>
+                </ul>
+            </div>
+
+            <div class="header_right">
+                <input type="text" v-model="ricerca">
+                <button @click="cerca">Cerca</button>
+            </div>
+
+        </header>
+
         
-        
-        <button @click="cerca">Cerca</button>
         
 
         <div class="film" v-for="elemento in arrayRisultato">
@@ -59,11 +69,6 @@
             </p>
         
         </div>
-
-
-
-
-        
 
     </div>
 

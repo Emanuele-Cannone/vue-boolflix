@@ -4,7 +4,49 @@
     box-sizing: border-box;
 }
 
+#contenitore{
+    background-color: black;
+    height: 500px;
+}
 
+header{
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+
+header .header_left img{
+    height: 40px;
+    padding: 0 10px;
+}
+
+.header_center{
+    flex-grow: 1;
+}
+
+.header_center ul{
+    display: flex;
+}
+
+.header_center ul li{
+    list-style: none;
+    padding: 0 10px;
+    color: lightgray;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.header_center ul li:hover{
+    color: #fff;
+}
+
+.header_center ul li.bianco{
+    color: #fff;
+}
+
+.header_right{
+    padding: 0 10px;
+}
 
 .film{
     margin-top: 20px;
