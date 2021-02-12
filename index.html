@@ -46,22 +46,22 @@
 
                 <div class="film" v-for="elemento in arrayRisultato">
                     
-                    <div id="poster">
+                    <div class="poster">
                         <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
                         <p v-else><img src="img/poster-placeholder.png" alt=""></p>
-                    </div>
-                    <div id="descrizione" class="">
-
-                        <p>titolo: {{elemento.title || elemento.original_name}}</p>
-                        <p>titolo originale: {{elemento.original_title}}</p>
-                        <p>lingua: {{elemento.original_language}}</p>
-                        <p>Votazione: 
-                            <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
-                            <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
-                        </p>
-                        <p class="bandiera_lingua">
-                            <img :src="'img/' + elemento.original_language + '.png'"></img>
-                        </p>
+                        <div class="descrizione">
+                            
+                            <p>titolo: {{elemento.title || elemento.original_name}}</p>
+                            <p>titolo originale: {{elemento.original_title}}</p>
+                            <p>lingua: {{elemento.original_language}}</p>
+                            <p>Votazione: 
+                                <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
+                                <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
+                            </p>
+                            <p class="bandiera_lingua">
+                                <img :src="'img/' + elemento.original_language + '.png'">
+                            </p>
+                        </div>
                     </div>
 
         
@@ -69,26 +69,26 @@
         
                 <div class="film" v-for="elemento in arrayAll">
                     
-                    <div id="poster">
+                    <div class="poster">
 
                         <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
                         <p v-else><img src="img/poster-placeholder.png" alt=""></p>
                     
-                    </div>
-                    
-                    <div id="descrizione" class="">
-
-                        <p>titolo: {{elemento.title || elemento.name}}</p>
-                        <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>
-                        <p>lingua: {{elemento.original_language}}</p>
-                        <p>Votazione:
-                            <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
-                            <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
-                        </p>
-                        <p class="bandiera_lingua">
-                            <img :src="'img/' + elemento.original_language + '.png'"></img>
-                        </p>
-                    
+                        
+                        <div class="descrizione" >
+                            
+                            <p>titolo: {{elemento.title || elemento.name}}</p>
+                            <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>
+                            <p>lingua: {{elemento.original_language}}</p>
+                            <p>Votazione:
+                                <span v-for="stellapiena in elemento.votazione"><i class="fas fa-star"></i></span>
+                                <span v-for="stellavuota in (5 - elemento.votazione)"><i class="far fa-star"></i></span>
+                            </p>
+                            <p class="bandiera_lingua">
+                                <img :src="'img/' + elemento.original_language + '.png'">
+                            </p>
+                            
+                        </div>
                     </div>
                 
                 </div>

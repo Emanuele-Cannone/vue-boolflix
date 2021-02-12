@@ -108,7 +108,7 @@ h2{
 }
 
 .bandiera_lingua img{
-    height: 30px;
+    width: 30px;
 }
 
 .none{
@@ -117,13 +117,16 @@ h2{
 
 
 .poster{
-    position: relative;    
-    height: 100%; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
 }
 
 .descrizione{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 30%;
+    transform: translate(-30%, -50%);
 }
