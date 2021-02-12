@@ -50,7 +50,7 @@
                         <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
                         <p v-else><img src="img/poster-placeholder.png" alt=""></p>
                     </div>
-                    <div id="descrizione" class="none">
+                    <div id="descrizione" class="">
 
                         <p>titolo: {{elemento.title || elemento.original_name}}</p>
                         <p>titolo originale: {{elemento.original_title}}</p>
@@ -76,7 +76,7 @@
                     
                     </div>
                     
-                    <div id="descrizione" class="none">
+                    <div id="descrizione" class="">
 
                         <p>titolo: {{elemento.title || elemento.name}}</p>
                         <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>
