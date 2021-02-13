@@ -49,7 +49,7 @@
                 <div class="film" v-for="(elemento, index) in arrayRisultato">
                     
                     <div class="poster">
-                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagli(index)" @mouseleave="vediDettagli(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagli(arrayRisultato, index)" @mouseleave="vediDettagli(arrayRisultato, index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
                         <p v-else @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
                         <div v-if="elemento.visualizzaDescrizione" class="descrizione">
                             
@@ -73,8 +73,8 @@
                     
                     <div class="poster" >
 
-                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)" ><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-                        <p v-else @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
+                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagli(arrayAll, index)" @mouseleave="vediDettagli(arrayAll, index)" ><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-else @mouseenter="vediDettagli(arrayAll, index)" @mouseleave="vediDettagli(arrayAll, index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
                     
                         
                         <div class="descrizione" v-if="elemento.visualizzaDescrizione">

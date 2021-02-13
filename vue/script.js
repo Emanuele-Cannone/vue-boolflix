@@ -61,7 +61,7 @@
 
                         })
 
-                        console.log(this.arrayRisultato);
+                        // console.log(this.arrayRisultato);
                     });
                     
 
@@ -94,7 +94,7 @@
 
                         })
 
-                        console.log(this.arrayAll);
+                        // console.log(this.arrayAll);
                     })
 
 
@@ -131,9 +131,9 @@
             
                     })
     
-                console.log(this.arrayRisultato);
+                // console.log(this.arrayRisultato);
                 })
-                console.log(this.tipo);
+                // console.log(this.tipo);
             }
 
 
@@ -168,20 +168,12 @@
 
         },
 
-        vediDettagli(index){
+        vediDettagli(array, index){
 
-            this.arrayRisultato[index].visualizzaDescrizione = !this.arrayRisultato[index].visualizzaDescrizione
+            array[index].visualizzaDescrizione = !array[index].visualizzaDescrizione
 
             // console.log(this.arrayRisultato[index].visualizzaDescrizione);
-        },
-
-        vediDettagliAltro(index) {
-
-            this.arrayAll[index].visualizzaDescrizione = !this.arrayAll[index].visualizzaDescrizione
-
-            // console.log(this.arrayAll[index].visualizzaDescrizione);
-        },
-        
+        }
 
     }
 
