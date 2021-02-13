@@ -23,7 +23,7 @@
                 nonSoComeCHiamarlo: false
             },
         ],
-        barraRicerca: false,
+        barraRicerca: false
     },
     methods: {
 
@@ -51,6 +51,8 @@
                             // l'elemento
                             return {
                                 ...element,
+
+                                visualizzaDescrizione: false,
 
                                 // votazione = numero arrotondato di numero / 2
                                 votazione: Math.round(element.vote_average / 2)
@@ -82,6 +84,8 @@
                             // l'elemento
                             return {
                                 ...element,
+
+                                visualizzaDescrizione: false,
 
                                 // votazione = numero arrotondato di numero / 2
                                 votazione: Math.round(element.vote_average / 2)
@@ -117,6 +121,8 @@
                         // l'elemento
                         return {
                             ...element,
+
+                            visualizzaDescrizione: false,
             
                             // votazione = numero arrotondato di numero / 2
                             votazione: Math.round(element.vote_average / 2)
@@ -160,8 +166,22 @@
 
             this.barraRicerca = !this.barraRicerca
 
-        }
+        },
 
+        vediDettagli(index){
+
+            this.arrayRisultato[index].visualizzaDescrizione = !this.arrayRisultato[index].visualizzaDescrizione
+
+            // console.log(this.arrayRisultato[index].visualizzaDescrizione);
+        },
+
+        vediDettagliAltro(index) {
+
+            this.arrayAll[index].visualizzaDescrizione = !this.arrayAll[index].visualizzaDescrizione
+
+            // console.log(this.arrayAll[index].visualizzaDescrizione);
+        },
+        
 
     }
 

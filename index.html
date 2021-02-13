@@ -8,6 +8,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>Boolflix</title>
 </head>
 <body>
@@ -44,12 +46,12 @@
 
             <div class="contenitore_film">
 
-                <div class="film" v-for="elemento in arrayRisultato">
+                <div class="film" v-for="(elemento, index) in arrayRisultato">
                     
                     <div class="poster">
-                        <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-                        <p v-else><img src="img/poster-placeholder.png" alt=""></p>
-                        <div class="descrizione">
+                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagli(index)" @mouseleave="vediDettagli(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-else @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
+                        <div v-if="elemento.visualizzaDescrizione" class="descrizione">
                             
                             <p>titolo: {{elemento.title || elemento.original_name}}</p>
                             <p>titolo originale: {{elemento.original_title}}</p>
@@ -67,15 +69,15 @@
         
                 </div>
         
-                <div class="film" v-for="elemento in arrayAll">
+                <div class="film" v-for="(elemento, index) in arrayAll">
                     
-                    <div class="poster">
+                    <div class="poster" >
 
-                        <p v-if="(elemento.poster_path != null)"><img :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-                        <p v-else><img src="img/poster-placeholder.png" alt=""></p>
+                        <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)" ><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
+                        <p v-else @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
                     
                         
-                        <div class="descrizione" >
+                        <div class="descrizione" v-if="elemento.visualizzaDescrizione">
                             
                             <p>titolo: {{elemento.title || elemento.name}}</p>
                             <p>titolo originale: {{elemento.original_title || elemento.original_name}}</p>

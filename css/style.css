@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black;
+    font-family: 'Bebas Neue', cursive;
+}
+
 
 /* classi riutilizzabili */
 .white{
@@ -14,7 +19,6 @@
 
 /* vue */
 #contenitore{
-    background-color: black;
     color: #fff
 }
 
@@ -89,14 +93,12 @@ h2{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: blue;
 }
 
 .film{
     flex-basis: calc(100% / 6 - 60px);
     padding: 10px 10px;
     display: flex;
-    background-color: green;
 }
 
 .film img{
@@ -111,10 +113,9 @@ h2{
     width: 30px;
 }
 
-.none{
-    display: none;
+.oscura{
+    opacity: 0.4;
 }
-
 
 .poster{
     position: absolute;
