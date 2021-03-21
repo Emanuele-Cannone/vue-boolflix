@@ -35,7 +35,8 @@
                 
                 axios
                     // con questa chiamata cerco i film
-                    .get('https://api.themoviedb.org/3/search/movie?api_key=' + this.api + '&query=' + this.ricerca)
+                    .get('https://api.themoviedb.org/3/search/movie?api_key=' + this.api + '&query=' + this.ricerca + '&genres')
+                
                 
                     
                     .then(result => {
@@ -61,7 +62,7 @@
 
                         })
 
-                        // console.log(this.arrayRisultato);
+                        console.log(this.arrayRisultato);
                     });
                     
 
@@ -69,7 +70,8 @@
 
                 axios
                     // con questa chiamata cerco le serie tv
-                    .get('https://api.themoviedb.org/3/search/tv?api_key=' + this.api + '&query=' + this.ricerca)
+                    .get('https://api.themoviedb.org/3/search/tv?api_key=' + this.api + '&query=' + this.ricerca + '&genres')
+                    
                 
                     .then(result => {
 
@@ -94,7 +96,7 @@
 
                         })
 
-                        // console.log(this.arrayAll);
+                        console.log(this.arrayAll);
                     })
 
 
@@ -102,7 +104,7 @@
 
                 // fai una chiamata
                 axios // RIGA SOTTO - e sostituisci this.tipo / this.api / this.ricerca al valore che vedi nei data
-                .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca)
+                    .get('https://api.themoviedb.org/3/search/' + this.tipo + '?api_key=' + this.api + '&query=' + this.ricerca + '&genres')
     
     
     
@@ -131,7 +133,7 @@
             
                     })
     
-                // console.log(this.arrayRisultato);
+                console.log(this.arrayRisultato);
                 })
                 // console.log(this.tipo);
             }

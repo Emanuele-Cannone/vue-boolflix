@@ -50,7 +50,7 @@
                     
                     <div class="poster">
                         <p v-if="(elemento.poster_path != null)" @mouseenter="vediDettagli(arrayRisultato, index)" @mouseleave="vediDettagli(arrayRisultato, index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " :src=" 'https://image.tmdb.org/t/p/w342' + elemento.poster_path " alt=""></p>
-                        <p v-else @mouseenter="vediDettagliAltro(index)" @mouseleave="vediDettagliAltro(index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
+                        <p v-else @mouseenter="vediDettagli(arrayRisultato, index)" @mouseleave="vediDettagli(arrayRisultato, index)"><img :class="(elemento.visualizzaDescrizione) ? 'oscura' : ' ' " src="img/poster-placeholder.png" alt=""></p>
                         <div v-if="elemento.visualizzaDescrizione" class="descrizione">
                             
                             <p>titolo: {{elemento.title || elemento.original_name}}</p>
